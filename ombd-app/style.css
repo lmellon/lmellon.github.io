@@ -15,7 +15,6 @@ body {
 }
 
 .img-carousel {
-  /* border: 2px #666666 solid; */
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -45,7 +44,7 @@ body {
   background-color: #40190B;
   color: #54AD91;
   border: 1px solid #666666;
-
+  font-size: 1em;
 }
 
 .carousel-btn:active {
@@ -67,40 +66,72 @@ body {
 
 .bio > h1 {
   color: #E6E6E6;
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5em;
 }
 
 .bio > h2 {
-  color: #54AD91;
+  color: #E24F19;
+  font-family: 'Satisfy', cursive;
+  font-size: 2em;
 }
 
 .bio > p {
   color: #E6E6E6;
+  font-family: 'Acme', sans-serif;
+  font-size: 1.25em;
 }
 
 .famous-movies {
-
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .famous-movies > h1 {
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .movie-info {
-  display: flex;
   border: 2px solid #666666;
   border-radius: 10px;
+  display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   margin: 2em 1em;
 }
 
 .title {
   margin-top: -1em;
   margin-left: 0.75em;
+  align-self: flex-start;
+  font-family: 'Acme', sans-serif;
+  font-size: 1.2em;
 }
 
+.plot {
+  width: 90%;
+  margin: .5em;
+  font-family: 'Kreon', serif;
+  font-size: 1em;
+}
+
+.director {
+  width: 90%;
+  margin: .5em;
+  font-family: 'Acme', sans-serif;
+  font-size: 1em;
+}
+
+.stars {
+  width: 90%;
+  margin: .5em;
+  font-family: 'Kreon', serif;
+  font-size: 1em;
+}
 
 .years {
   width: 70%;
@@ -116,6 +147,9 @@ body {
   margin: 10px;
   background-color: #E24F19;
   border: 1px solid #666666;
+  font-family: 'Acme', sans-serif;
+  font-size: .9em;
+  color: #40190B;
 }
 
 /* SETTINGS FOR DESTOP VERSION */
@@ -139,11 +173,9 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
-    /* margin-top: 2em; */
   }
 
   .img-carousel {
-    /* border: 2px #666666 solid; */
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -160,12 +192,55 @@ body {
     margin-right: 1em;
   }
 
+  .famous-movies > h1 {
+    font-size: 2.25em;
+  }
+
   hr {
     width: 90%;
     border: 2px #54AD91 solid;
     border-radius: 20px;
     height: 5px;
     background-color: #E24F19;
+  }
+
+  .movie-info {
+    border: 2px solid #666666;
+    border-radius: 10px;
+    background-color: #FFA585;
+    margin: 2em 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 90%;
+  }
+
+  .title {
+    width: 20%;
+    margin: 0.5em;
+    font-family: 'Acme', sans-serif;
+    font-size: 1.5em;
+  }
+
+  .plot {
+    width: 35%;
+    margin: .5em;
+    font-family: 'Kreon', serif;
+    font-size: 1.25em;
+  }
+
+  .director {
+    width: 20%;
+    margin: .5em;
+    font-family: 'Acme', sans-serif;
+    font-size: 1.5em;
+  }
+
+  .stars {
+    width: 25%;
+    margin: .5em;
+    font-family: 'Kreon', serif;
+    font-size: 1.25em;
   }
 
   .years > button {
@@ -193,7 +268,7 @@ body {
   }
 
   .bio > h2 {
-    color: #14B884;
+    color: #54AD91;
   }
 
   .bio > p {
@@ -207,12 +282,16 @@ body {
   .awards > h1 {
     color: #E6E6E6;
     text-align: center;
+    font-family: 'Satisfy', cursive;
+    font-size: 2.5em;
   }
 
   .awards > ul {
-    /* list-style: none; */
+    list-style: none;
+    padding-left: 20px;
     line-height: 2em;
-    /* padding-left: 20px; */
+    font-family: 'Merienda', cursive;
+    font-size: 1.05em;
   }
 
 }

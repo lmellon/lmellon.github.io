@@ -49,11 +49,14 @@ const pullMovieData = (movieName) => {
   }).then(
     (data) => {
       // console.log(data);
+      // make sure no movie information is displayed
       $('.movie-info').empty();
+      // create 4 divs for each piece of data we are pulling from the api
       let $title = $('<h3>').addClass('title').html(data.Title);
       let $plot = $('<div>').addClass('plot').html(data.Plot);
       let $director = $('<div>').addClass('director').html('Directed by: ' + (data.Director));
       let $stars = $('<div>').addClass('stars').html('Cast: ' + (data.Actors));
+      // append the divs to the last div, movie-info, so they display at the bottom of the screen
       $('.movie-info').append($title);
       $('.movie-info').append($plot);
       $('.movie-info').append($director);
