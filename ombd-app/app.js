@@ -1,6 +1,6 @@
 $(() => {
-
-// create image CAROUSEL
+/////////////////////////////////////////////////////////////////
+///////////////// create image CAROUSEL   ///////////////////////
 
 // variables need to be able to change.  have to use let instead of const
 let picCount = 0;
@@ -39,116 +39,60 @@ $('.previous').on('click',() => {
   $visiblePic.eq(picCount).show();
 })
 
-// create variable for t= in ajax url
-let movieName = '';
+/////////////////////////////////////////////////////////////////
+////////////////////    create ajax method   ////////////////////
+// make ajax a global function with a parameter of the movie name we want pulled.
 
-// event listener for 1985 button
+const pullMovieData = (movieName) => {
+  $.ajax({
+    url: "http://www.omdbapi.com/?i=tt3896198&apikey=c55d5c9f&t=" + movieName
+  }).then(
+    (data) => {
+      // console.log(data);
+      $('.movie-info').empty();
+      let $title = $('<h3>').addClass('title').html(data.Title);
+      let $plot = $('<div>').addClass('plot').html(data.Plot);
+      let $director = $('<div>').addClass('director').html('Directed by: ' + (data.Director));
+      let $stars = $('<div>').addClass('stars').html('Cast: ' + (data.Actors));
+      $('.movie-info').append($title);
+      $('.movie-info').append($plot);
+      $('.movie-info').append($director);
+      $('.movie-info').append($stars);
+    },
+    () => {
+      console.log('bad request');
+    }
+  )
+}
+
+
+//////////////////////////////////////////////////////////
+//////////////    create event listeners    //////////////
+
+// For the year buttons, pass the movie title as the parameter of pullMovieData().  This alters the ajax url everytime to display the correct info.
+
 $('.80sbtn').on('click',(event) => {
-  movieName = 'out+of+africa';
-
-// use AJAX to retrieve data from the omdb api
-  $.ajax({
-    url: "http://www.omdbapi.com/?i=tt3896198&apikey=c55d5c9f&t=" + movieName
-  }).then(
-    (data) => {
-      console.log(data);
-      $('.movie-info').empty();
-      let $title = $('<h3>').addClass('title').html(data.Title);
-      let $plot = $('<div>').addClass('plot').html(data.Plot);
-      let $director = $('<div>').addClass('director').html('Directed by: ' + (data.Director));
-      let $stars = $('<div>').addClass('stars').html('Cast: ' + (data.Actors));
-      $('.movie-info').append($title);
-      $('.movie-info').append($plot);
-      $('.movie-info').append($director);
-      $('.movie-info').append($stars);
-    },
-    () => {
-      console.log('bad request');
-    }
-  )
+  pullMovieData('out+of+africa');
 });
 
-
-//event listener for 1996 button
 $('.90sbtn').on('click',(event) => {
-  movieName = 'The+bridges+of+madison+county';
-
-// use AJAX to retrieve data from the omdb api
-  $.ajax({
-    url: "http://www.omdbapi.com/?i=tt3896198&apikey=c55d5c9f&t=" + movieName
-  }).then(
-    (data) => {
-      console.log(data);
-      $('.movie-info').empty();
-      let $title = $('<h3>').addClass('title').html(data.Title);
-      let $plot = $('<div>').addClass('plot').html(data.Plot);
-      let $director = $('<div>').addClass('director').html('Directed by: ' + (data.Director));
-      let $stars = $('<div>').addClass('stars').html('Cast: ' + (data.Actors));
-      $('.movie-info').append($title);
-      $('.movie-info').append($plot);
-      $('.movie-info').append($director);
-      $('.movie-info').append($stars);
-    },
-    () => {
-      console.log('bad request');
-    }
-  )
+  pullMovieData('The+bridges+of+madison+county');
 });
 
-//event listener for 2006 button
 $('.00sbtn').on('click',(event) => {
-  movieName = 'The+devil+wears+Prada';
-
-// use AJAX to retrieve data from the omdb api
-  $.ajax({
-    url: "http://www.omdbapi.com/?i=tt3896198&apikey=c55d5c9f&t=" + movieName
-  }).then(
-    (data) => {
-      console.log(data);
-      $('.movie-info').empty();
-      let $title = $('<h3>').addClass('title').html(data.Title);
-      let $plot = $('<div>').addClass('plot').html(data.Plot);
-      let $director = $('<div>').addClass('director').html('Directed by: ' + (data.Director));
-      let $stars = $('<div>').addClass('stars').html('Cast: ' + (data.Actors));
-      $('.movie-info').append($title);
-      $('.movie-info').append($plot);
-      $('.movie-info').append($director);
-      $('.movie-info').append($stars);
-    },
-    () => {
-      console.log('bad request');
-    }
-  )
+  pullMovieData('The+devil+wears+Prada');
 });
 
-// event listner for 2011 button
 $('.10sbtn').on('click',(event) => {
-  movieName = 'iron+lady';
-
-// use AJAX to retrieve data from the omdb api
-  $.ajax({
-    url: "http://www.omdbapi.com/?i=tt3896198&apikey=c55d5c9f&t=" + movieName
-  }).then(
-    (data) => {
-      console.log(data);
-      $('.movie-info').empty();
-      let $title = $('<h3>').addClass('title').html(data.Title);
-      let $plot = $('<div>').addClass('plot').html(data.Plot);
-      let $director = $('<div>').addClass('director').html('Directed by: ' + (data.Director));
-      let $stars = $('<div>').addClass('stars').html('Cast: ' + (data.Actors));
-      $('.movie-info').append($title);
-      $('.movie-info').append($plot);
-      $('.movie-info').append($director);
-      $('.movie-info').append($stars);
-    },
-    () => {
-      console.log('bad request');
-    }
-  )
+  pullMovieData('iron+lady');
 });
+
+// create event listner to clear the movie information when you click anywhere in the 'right-side' class. (essentially the right side of the screen)
 
 $('.right-side').on('click',() => {
   $('.movie-info').empty();
-})
+});
+
+
 
 })
