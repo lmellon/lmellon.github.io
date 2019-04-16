@@ -45,7 +45,7 @@ $('.previous').on('click',() => {
 
 const pullMovieData = (movieName) => {
   $.ajax({
-    url: "http://www.omdbapi.com/?i=tt3896198&apikey=c55d5c9f&t=" + movieName
+    url: "https://www.omdbapi.com/?i=tt3896198&apikey=c55d5c9f&t=" + movieName
   }).then(
     (data) => {
       // console.log(data);
