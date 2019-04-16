@@ -96,6 +96,4 @@ $('.right-side').on('click',() => {
   $('.movie-info').empty();
 });
 
-
-
-})
+});
