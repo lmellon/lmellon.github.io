@@ -152,6 +152,56 @@ body {
   color: #40190B;
 }
 
+.famous-movies > h2 {
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.play {
+  display: inline-block;
+  background-color: #666666;
+  color: white;
+  padding: 1em;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 1em;
+}
+
+
+
+.final-score {
+  display: flex;
+  align-items: flex-start;
+}
+
+.pull-results {
+  background-color: #666666;
+  color: white;
+  padding: 1em;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  margin: 1em;
+}
+
+.score {
+  background-color: #E24F19;
+  color: #40190B;
+  padding: 1em;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  margin: 1em;
+}
+
+.restart {
+  background-color: #666666;
+  color: white;
+  padding: 1em;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  margin: 1em;
+}
+
+
 /* SETTINGS FOR DESTOP VERSION */
 
 @media (min-width: 600px) {

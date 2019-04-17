@@ -6,7 +6,7 @@ My goal was to showcase one actor's work, pulling movie information from the OMD
 
 
 ## Technologies Used
-For an API, I chose to use **OMDb**. I set up several event listeners on buttons the user could select to list the different movie data pulled via **AJAX** requests.
+For an API, I chose to use **OMDb**. I set up several event listeners on buttons the user could select to list the different movie data pulled via *AJAX* requests.
 
 My complex UI item is an **carousel**.  I pulled 4 images of the showcased actor and set up a carousel through which a user can flip forward and backward.
 
@@ -26,5 +26,9 @@ One of my stretch goals was to alter the AJAX request to pull all the movies the
 Another problem I encountered was to during the creation of my quiz.  I attempted to learn how to create a multiple choice quiz via reading on [sitepoint](https://www.sitepoint.com/simple-javascript-quiz/) and [simplestepscode](https://simplestepscode.com/javascript-quiz-tutorial/#step1), but I was unsuccessful at implementing it.  Instead, I created a function that had two parameters which created numbered questions when called with corresponding arguments.  I intentionally made them Boolean and added a *true* and *false* buttons to them during the creation process of the question.  The problem I ran into was not being able to alternate correct responses between the questions.  I ended up making sure all the questions were true so that that was the only event listener that increased the user's score.
 
 
-## Link to live site
-My page is hosted on Github pages.  You can access it at[www.lmellon.github.io](https://lmellon.github.io).
+## SOURCES
+The actor I chose to feature in my app is Meryl Streep.  I gathered all her biographical information from [Wikipedia's page](https://en.wikipedia.org/wiki/Meryl_Streep#cite_note-LearningGuitar-203) on her.  I also utilized the information available on [OMDb](http://www.omdbapi.com/), and a [Google](https://www.google.com) search for the pictures in my carousel.
+
+
+## LIVE SITE
+My page is hosted on Github pages.  You can access it at [www.lmellon.github.io](https://lmellon.github.io).

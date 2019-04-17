@@ -107,7 +107,7 @@ let playerScore = 0
 // create a function that shows the quiz question and T/F buttons.  use parameters to identify the question number and the question text.  add in event listeners for answers.
 const showQuestion = (qnumber, qtext) => {
   // create question
-  let $quizQuestion = $('<p>').text(qnumber + ' .' + qtext).addClass('questionaire');
+  let $quizQuestion = $('<p>').text(qnumber + '.  ' + qtext).addClass('questionaire');
   // create button for True and False
   let $optionTrue = $('<button>').text('True').addClass('qbtn');
   let $optionFalse = $('<button>').text('False').addClass('qbtn');
@@ -141,17 +141,14 @@ $('.play').on('click', () => {
 
 //////// create function to display score when quiz is done.
 
-// create button to show results of quiz.
-const $pullResults = $('<button>').text("Show Results").addClass('pull-results');
-// append button to the final score div
-$('.final-score').append($pullResults);
+
 
 // event listener for show results button
-$pullResults.on('click', () => {
+$('.pull-results').on('click', () => {
   // create a div that writes out the final score.
-  const $quizScore = $('<div>').text('You got '+ playerScore + ' out of 5 right!').addClass('score');
+  const $quizScore = $('<div>').text('You answered ' + playerScore + ' out of 5 correctly!').addClass('score');
   // create a button to restart the quiz
-  const $resetQuiz = $('<button>').text("Restart quiz").addClass('restart');
+  const $resetQuiz = $('<div>').text("Restart quiz").addClass('restart');
   // append the div result to the parent div (final-score)
   $('.final-score').append($quizScore);
   // append the reset button to the paren div (final-score)
