@@ -96,4 +96,74 @@ $('.right-side').on('click',() => {
   $('.movie-info').empty();
 });
 
+
+/////////////////////////////////////////////
+////////////////   quizz   ///////////////////
+
+// set player's score to zero
+let playerScore = 0
+
+
+// create a function that shows the quiz question and T/F buttons.  use parameters to identify the question number and the question text.  add in event listeners for answers.
+const showQuestion = (qnumber, qtext) => {
+  // create question
+  let $quizQuestion = $('<p>').text(qnumber + ' .' + qtext).addClass('questionaire');
+  // create button for True and False
+  let $optionTrue = $('<button>').text('True').addClass('qbtn');
+  let $optionFalse = $('<button>').text('False').addClass('qbtn');
+  // append question to the parent div (quiz)
+  $('.quiz').append($quizQuestion);
+  // append buttons to the question
+  $quizQuestion.append($optionTrue);
+  $quizQuestion.append($optionFalse);
+  // set up event listener for True button
+  $optionTrue.on('click',() => {
+    // increase the player's score by 1
+    playerScore++;
+    // change background color to green if selected
+    $optionTrue.css('background-color','#54AD91');
+  });
+  // set up event listener for False button
+  $optionFalse.on('click',() => {
+    // change background color to red if selected
+    $optionFalse.css('background-color','red');
+  })
+}
+
+// set up event listener to display quiz.  Create the arguments for the 5 questions that will be created//
+$('.play').on('click', () => {
+  showQuestion(1, "Meryl Streep was born in New Jersey.");
+  showQuestion(2, "Meryl Streep won Academy Awards for her work in Kramer vs Kramer, Sophie's Choice, and The Iron Lady.");
+  showQuestion(3, "Meryl Streep has acted one son and three daughters.");
+  showQuestion(4, "Meryl Streep has been nominated for over 375 awards.");
+  showQuestion(5, "Meryl Streep is well known for her ability to imitate accents.")
+});
+
+//////// create function to display score when quiz is done.
+
+// create button to show results of quiz.
+const $pullResults = $('<button>').text("Show Results").addClass('pull-results');
+// append button to the final score div
+$('.final-score').append($pullResults);
+
+// event listener for show results button
+$pullResults.on('click', () => {
+  // create a div that writes out the final score.
+  const $quizScore = $('<div>').text('You got '+ playerScore + ' out of 5 right!').addClass('score');
+  // create a button to restart the quiz
+  const $resetQuiz = $('<button>').text("Restart quiz").addClass('restart');
+  // append the div result to the parent div (final-score)
+  $('.final-score').append($quizScore);
+  // append the reset button to the paren div (final-score)
+  $('.final-score').append($resetQuiz);
+  // build in an event listner to reset the quiz
+  $resetQuiz.on('click',() => {
+    $('.quiz').empty();
+    $quizScore.empty();
+    $('.final-score').empty();
+  })
+});
+
+
+
 });
