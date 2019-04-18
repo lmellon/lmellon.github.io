@@ -36,7 +36,6 @@ body {
   height: auto;
 }
 
-
 .carousel-btn {
   align-self: center;
   text-align: center;
@@ -52,7 +51,6 @@ body {
 }
 
 .column {
-  /* border: 2px green solid; */
   width: 80%;
   margin: 0 auto;
   background-color: #666666;
@@ -94,9 +92,14 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+.famous-movies > h2 {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .movie-info {
   border: 2px solid #666666;
   border-radius: 10px;
+  background-color: #FFA585;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -152,9 +155,8 @@ body {
   color: #40190B;
 }
 
-.famous-movies > h2 {
-  font-family: 'Montserrat', sans-serif;
-
+hr {
+  visibility: hidden;
 }
 
 .play {
@@ -167,7 +169,38 @@ body {
   margin-bottom: 1em;
 }
 
+.play:active {
+  transform: rotateY(36deg);
+}
 
+.quiz {
+  display: none;
+  width: 90%;
+  justify-content: space-around;
+  border: 2px #E24F19 solid;
+  margin: 1.5em;
+  background: linear-gradient(to bottom right, #a9d6c7 0%, #eef7f4 100%);
+}
+
+.questionaire {
+  font-family: 'Acme', sans-serif;
+  font-size: 1.25em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.qbtn {
+  background-color: #40190B;
+  border: 1px #666666 inset;
+  color: white;
+  font-family: 'Satisfy', cursive;
+  font-size: 1em;
+  margin: 0.5em;
+}
+
+.qbtn:hover {
+  background-color: #E24F19;
+}
 
 .final-score {
   display: flex;
@@ -183,11 +216,15 @@ body {
   margin: 1em;
 }
 
+.pull-results:active {
+  transform: rotateY(36deg);
+}
+
 .score {
   background-color: #E24F19;
   color: #40190B;
-  padding: 1em;
-  border-radius: 10px;
+  padding: 1em 2em;;
+  border: 2px #40190B double;
   font-family: 'Montserrat', sans-serif;
   margin: 1em;
 }
@@ -201,6 +238,9 @@ body {
   margin: 1em;
 }
 
+.restart:active {
+  transform: rotateZ(36deg);
+}
 
 /* SETTINGS FOR DESTOP VERSION */
 
@@ -247,6 +287,7 @@ body {
   }
 
   hr {
+    visibility: visible;
     width: 90%;
     border: 2px #54AD91 solid;
     border-radius: 20px;
@@ -299,6 +340,12 @@ body {
       font-size: 1em;
       padding: 30px;
       background-color: #54AD91;
+  }
+
+  .quiz {
+    border: 1px #40190B dotted;
+    margin: 1em;
+    background: linear-gradient(to bottom, #54ad91 20%, #a9d6c7 100%);
   }
 
   .column {

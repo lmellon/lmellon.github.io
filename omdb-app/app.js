@@ -134,9 +134,10 @@ const showQuestion = (qnumber, qtext) => {
 $('.play').on('click', () => {
   showQuestion(1, "Meryl Streep was born in New Jersey.");
   showQuestion(2, "Meryl Streep won Academy Awards for her work in Kramer vs Kramer, Sophie's Choice, and The Iron Lady.");
-  showQuestion(3, "Meryl Streep has acted one son and three daughters.");
+  showQuestion(3, "Meryl Streep and Don Gummer have one son and three daughters.");
   showQuestion(4, "Meryl Streep has been nominated for over 375 awards.");
   showQuestion(5, "Meryl Streep is well known for her ability to imitate accents.")
+  $('.quiz').show();
 });
 
 //////// create function to display score when quiz is done.
@@ -155,9 +156,11 @@ $('.pull-results').on('click', () => {
   $('.final-score').append($resetQuiz);
   // build in an event listner to reset the quiz
   $resetQuiz.on('click',() => {
-    $('.quiz').empty();
-    $quizScore.empty();
     $('.final-score').empty();
+    $('.quiz').empty();
+    playerScore = 0;
+    $quizScore.empty();
+    $('.quiz').hide();
   })
 });
 
