@@ -27,13 +27,12 @@ body {
   align-items: center;
   justify-content: space-around;
   margin: 10px auto;
-  width:90%;
 }
 
 .images img {
   display: none;
-  max-width: 451.19px;
-  max-height: 400px;
+  max-width: 290px;
+  max-height: 300px;
   margin-left: 1em;
   margin-right: 1em;
 }
