@@ -14,6 +14,14 @@ body {
   color: #40190B;
 }
 
+ .right-side {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
 .img-carousel {
   display: flex;
   align-items: center;
